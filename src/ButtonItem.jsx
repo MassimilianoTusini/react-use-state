@@ -1,12 +1,11 @@
 export default function ButtonItem(props) {
 
     //destrutturazione delle props
-    const {isOpen, onToggle, titolo, contenuto} = props;
+    const {className, click, titolo} = props;
 
     return(
-        <div className='btn-content'>
-            <button type="button" className={isOpen ? "btn btn-warning btn-lg" : "btn btn-primary btn-lg"} onClick={onToggle}>{titolo}</button>
-            {isOpen && <div><h3>{titolo}</h3>{contenuto}</div>}
-        </div>
+        <>
+            <button type="button" className={`btn btn-primary btn-lg ${className}`} onClick={click}>{titolo}</button>
+        </>
     );
 }
